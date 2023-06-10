@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <title>About me</title>
+    <style>
+        * {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #21130d;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+            margin: 0 20px;
+        }
+
+        .sidebar {
+            flex: 0 0 100px;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .sidebar a {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            color: #85659c;
+            font-size: 16px;
+            margin-bottom: 10px;
+            text-decoration: none;
+        }
+
+        .sidebar a:hover {
+            color: #6f5d99;
+        }
+
+        .content-container {
+            display: flex;
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        .picture {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        h1{
+            color:  #85659c;
+            padding-bottom: 500px;
+        }
+        h3{
+            padding-top: 400px;
+            margin-left: 50px;
+
+
+        }
+        h3 a{
+            text-decoration: none;
+            color:  #85659c;
+            font-size: 20px;
+
+
+
+        }
+
+        .picture img {
+            max-width: 300px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .picture div{
+            padding-top: 200px;
+        }
+        .picture div a img{
+            padding-top: 200px;
+        }
+
+
+
+
+        .description {
+            flex: 1;
+            margin-left: 20px;
+            padding-top: 120px;
+        }
+
+
+        .description h2 {
+
+            color:  #85659c;
+            font-size: 24px;
+            margin-top: 50px; /* Adjust the margin as needed */
+            margin-bottom: 10px; /* Add margin-bottom to create space below the title */
+
+        }
+
+        .description p {
+            color: white;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+        span{
+            font-weight: bold;
+        }
+        a{
+
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="sidebar">
+        <a href="/">Home</a>
+        <a href="/aboutme">About me</a>
+        <a href="/internship">Internship</a>
+        <a href="/projects">Projects</a>
+
+    </div>
+
+    <div class="content-container">
+
+
+        <div class="picture">
+            <h1>About Me</h1>
+
+            <img src="images/me.jpg" alt="Me">
+            <h3><a href="/documents/GiedreZalaiteCV.pdf" target="_blank">CV</a></h3>
+
+        </div>
+
+
+
+        <div class="description">
+            <h2  >Who am I</h2>
+
+            <p>I am an active, curious, and passionate individual with a deep interest in <span>logic, data, and automation </span>. I thrive on exploring new ideas and pushing boundaries to find innovative solutions.
+                My soft skills, including <span>thinking outside the box, problem-solving, adaptability, and determination </span>, have been instrumental in my academic and professional journey.</p>
+            <p> During my time at Thomas More I was active in some student organizations:</p>
+            <a href="/documents/studentcouncil.pdf" target="_blank">Student council</a> <br>
+            <a href="/documents/Certificate_buddy_Giedre%20Zalaite.pdf" target="_blank">International buddy programme</a>
+            <h2>Skills</h2>
+            <p>During my degree, I specialized in <span>artificial intelligence</span>, where I delved into various facets of this exciting field. My expertise lies in <span>machine learning</span>, computer vision (have experience working with high-resolution images), especially <span>neural networks</span>.  <span>Natural language processing</span> also captured my attention, allowing me to develop a solid foundation in this area.
+                I possess strong skills in <span>data analysis, engineering, and visualization</span>, enabling me to derive valuable insights from complex datasets.
+            </p>
+
+            <p>
+                In addition to my AI specialization, I have gained practical experience in diverse technical areas.
+                Through my education and other experiences, I have honed my web development skills, particularly in languages such as <span>PHP, .NET, and C++. </span>
+                I have also had the opportunity to work with <span>cloud technologies</span>, enhancing my understanding of their application in real-world scenarios.
+            </p>
+            <h2>Projects</h2>
+            <p>
+                Working in collaborative project environments, I have cultivated a strong proficiency in <span>agile and scrum methodologies. </span>
+                With a keen eye for detail, I excel in <span>requirement analysis </span>, ensuring that projects are aligned with client expectations and objectives.
+                I take great pride in consistently delivering <span>high-quality results</span>, placing a strong emphasis on meeting and exceeding project requirements.
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

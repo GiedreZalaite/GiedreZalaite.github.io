@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <style>
+        * {
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+        }
+
+        body {
+            background-color: #21130d;
+            margin: 5px;
+            padding: 20px;
+            display: flex;
+            justify-content: center; /* Center the content horizontally */
+        }
+
+        h1 {
+            color: #85659c;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #85659c;
+        }
+
+        button {
+            background-color: #85659c;
+            padding: 5px;
+            margin-left: 10px;
+        }
+
+        div button a {
+            text-decoration: none;
+            color: white;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            margin-top: 120px;
+        }
+
+        .expanded-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 9999;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .expanded-image {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            cursor: initial;
+        }
+    </style>
+</head>
+<body class="container">
+<div class="row">
+    <div class="row p-4 col-md-7">
+        <h1 th:text="${project.getTitle()}"></h1>
+        <div class="col-md-6">
+            <h2>Summary</h2>
+            <p th:utext="${project.getSummary()}"></p>
+        </div>
+        <div class="col-md-6">
+            <h2>Roles</h2>
+            <p th:utext="${project.getRoles()}"></p>
+        </div>
+        <div class="col-md-6">
+            <h2>Technical details</h2>
+            <p th:utext="${project.getTechnical()}"></p>
+        </div>
+        <div class="col-md-6">
+            <h2>Results</h2>
+            <p th:utext="${project.getSolution()}"></p>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <img th:src="${project.getImage1()}" alt="Project image" onclick="expandImage(this)">
+        <img th:src="${project.getImage2()}" alt="Project image" onclick="expandImage(this)">
+    </div>
+</div>
+<div><button><a href="/projects">Back</a></button></div>
+
+<script>
+    function expandImage(element) {
+        var expandedContainer = document.createElement('div');
+        expandedContainer.className = 'expanded-container';
+        var expandedImage = document.createElement('img');
+        expandedImage.src = element.src;
+        expandedImage.className = 'expanded-image';
+        expandedContainer.appendChild(expandedImage);
+
+        expandedContainer.onclick = function() {
+            document.body.removeChild(expandedContainer);
+        };
+
+        document.body.appendChild(expandedContainer);
+    }
+</script>
+</body>
+</html>

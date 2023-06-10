@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap" rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Home</title>
+    <style>
+        * {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            /*background-color: #6f5d99;*/
+            background-color: #21130d;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .sidebar {
+            background-color: #85659c;
+            color: black;
+            padding: 20px;
+            width: 100px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar a {
+            color: black;
+            font-size: 17px;
+            text-decoration: none;
+            padding: 5px;
+        }
+
+        .content {
+            margin-left: 220px;
+            color: #ffffff;
+            text-align: justify;
+        }
+
+        h1 {
+            /*color: #d9cafa;*/
+            color: #85659c;
+            font-size: 200px;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="sidebar">
+    <ul>
+        <li><a href="/aboutme">About me</a></li>
+        <li><a href="/internship">Internship</a></li>
+        <li><a href="/projects">Projects</a></li>
+    </ul>
+</div>
+
+<div class="content">
+    <h1>Giedre Zalaite</h1>
+    <p>Welcome to my Bachelor Portfolio, where I summarize three years of studying Applied Computer Science (ACS) with a specialization in AI.</p>
+    <p> Here, you will discover a collection of projects, skills, and expertise that demonstrate my proficiency in ACS, along with details of my internship experience. As an aspiring IT professional, I have honed my skills in various areas, including data science and visualization, as well as AI techniques utilizing machine and deep learning algorithms.</p>
+    <p>Feel free to explore my portfolio to gain a comprehensive understanding of my abilities and achievements.</p>
+
+</div>
+</body>
+</html>

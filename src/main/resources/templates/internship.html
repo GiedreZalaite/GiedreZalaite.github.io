@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <title>Internship</title>
+    <style>
+        * {
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+        }
+
+        body {
+            background-color: #21130d;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .sidebar {
+            background-color: transparent;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .sidebar a {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            color: #85659c;
+            font-size: 16px;
+            margin-bottom: 10px;
+            text-decoration: none;
+        }
+
+        .sidebar a:hover {
+            color: #b693c8;
+        }
+
+        .content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+        }
+
+        h1 {
+            color: #85659c;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+        .summary {
+            margin-bottom: 20px;
+            flex: 1;
+            text-align: left;
+            padding-right: 50px;
+        }
+
+        .documents {
+
+            margin-bottom: 20px;
+            text-align: justify;
+            padding-top: 40px;
+        }
+
+        .document-link {
+
+            margin-bottom: 5px;
+            text-decoration: none;
+            color: white;
+            display: flex;
+            font-weight: bold;
+        }
+
+        .document-link:hover {
+            color: #6f5d99;
+        }
+
+        .pictures {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .picture {
+            flex: 0 0 33.33%;
+            padding: 5px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .picture img {
+            width: auto;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .picture.expanded {
+            flex: 0 0 100%;
+        }
+
+        .picture.expanded img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        span{
+            font-weight: bold;
+        }
+    </style>
+
+
+</head>
+<body >
+<div class="sidebar">
+    <a href="/">Home</a>
+    <a href="/aboutme">About me</a>
+    <a href="/internship">Internship</a>
+    <a href="/projects">Projects</a>
+</div>
+
+<div class="content">
+    <h1 class="col-12">Internship</h1>
+<div class="row">
+    <div class="summary col-md-7 ">
+        <p>Between 27/02/2023 and 02/06/2023, I did an internship at Duracell.</p>
+        <p>During my time there, I had the opportunity to work on an exciting project focused on <span>analyzing the behavior of a specific machine </span> used in the manufacturing process of battery rings. The goal of the project was to optimize equipment maintenance by predicting the most efficient time for rolldown, thereby saving time and money for the company.</p>
+        <br>
+        <p>I began by performing thorough <span>data cleaning using Python and Pandas library.</span> This included removing duplicates, standardizing measure names, and filling in missing values. This ensured accurate and consistent data for analysis.</p>
+        <p>To facilitate efficient analysis and collaboration, I set up a <span>virtual machine environment</span>. This allowed seamless data processing and easy access for team members in different locations.</p>
+        <p>Using <span>Power BI and Python</span>, I created visualizations to understand machine behavior, exploring trends, correlations, and data range over time. This helped identify significant factors and patterns.</p>
+        <p>Throughout the internship, I honed technical skills in <span>data analysis, Python programming, and data visualization in Power BI and Python. </span> I also developed professional skills like <span>time management, adaptability, and problem-solving.</span> Overcoming challenges during data cleaning and visualization further strengthened my abilities.</p> <br> The project's successful outcomes and the skills I acquired have laid a strong groundwork for my future career. I am grateful for the opportunities and knowledge gained during this internship and look forward to continuing to apply these skills.</p>
+    </div>
+
+    <div class="documents col-3">
+        <p>Below you will find documents about my internship that go in more detail about various aspects of it</p>
+
+            <a class="document-link" href="/documents/GiedreZalaiteR0844971_ProjectPlan.pdf" target="_blank">Project plan</a>
+            <a class="document-link" href="/documents/GiedreZalaiteR0844971_RealizationEvidence.pdf" target="_blank">Realization evidence</a>
+            <a class="document-link" href="/documents/GiedreZalaiteR0844971_Reflection.pdf" target="_blank">Reflection</a>
+    </div>
+</div>
+
+    <div class="pictures col-12">
+        <div class="picture">
+            <img src="/images/duracell.jpg" alt="Duracell image">
+        </div>
+        <div class="picture">
+            <img src="/images/python.png" alt="Image with graph">
+        </div>
+        <div class="picture">
+            <img src="/images/powerbi.png" alt="Image with graphs">
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script>
+    const pictures = document.querySelectorAll('.picture');
+
+    pictures.forEach(picture => {
+        picture.addEventListener('click', () => {
+            picture.classList.toggle('expanded');
+        });
+    });
+</script>
+</body>
+</html>

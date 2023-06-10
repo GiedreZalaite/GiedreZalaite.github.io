@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Projects</title>
+    <style>
+        * {
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+        }
+
+        body {
+            background-color: #21130d;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+        }
+
+        h1 {
+            color: #85659c;
+        }
+
+        h2, h3 {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        h2 {
+            font-size: 25px;
+        }
+
+        .sidebar {
+            background-color: transparent;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .sidebar a {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            color: #85659c;
+            font-size: 16px;
+            margin-bottom: 10px;
+            text-decoration: none;
+        }
+
+        .sidebar a:hover {
+            color: #b693c8;
+        }
+
+        /* CSS for the project cards */
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+            background-color: #85659c;
+            border: 1px solid black;
+            padding: 10px;
+            width: 300px;
+            margin-top: 150px;
+        }
+
+        .project-card a {
+            text-decoration: none;
+            color: #21130d;
+            font-size: 25px;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: auto;
+            margin-top: 10px;
+        }
+
+        /* Updated CSS to make the project cards appear in one line */
+        .project-cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: flex-start;
+        }
+    </style>
+</head>
+<body>
+<div class="sidebar">
+    <a href="/">Home</a>
+    <a href="/aboutme">About me</a>
+    <a href="/internship">Internship</a>
+    <a href="/projects">Projects</a>
+</div>
+
+<div class="content">
+    <h1>Projects</h1>
+    <!-- Add a container for the project cards -->
+    <div class="project-cards-container">
+        <div th:each="project : ${projects}" class="project-card">
+            <a th:href="@{/projectdetails(projectIndex=${projectStat.index})}">
+                <h2 th:text="${project.getTitle()}"></h2>
+                <h3 th:text="${project.getCourse() + ' - ' + project.getYear()}"></h3>
+                <h3 th:text="${project.getType()}"></h3>
+                <img th:src="${project.getBackground()}" alt="Project Image">
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
